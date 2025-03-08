@@ -100,9 +100,10 @@ The database consists of four main tables:
 
 - **Error Responses:**
 
-> | Status Code | Message                | Reason                                  |
-> | ----------- | ---------------------- | --------------------------------------- |
-> | `400`       | `"Invalid Student ID"` | If student ID doesn't exist in database |
+> | Status Code | Message                                    | Reason                                  |
+> | ----------- | ------------------------------------------ | --------------------------------------- |
+> | `400`       | `"Invalid Student ID"`                     | If student ID doesn't exist in database |
+> | `400`       | `"No available teachers for reassignment"` | If no other teachers exist in database  |
 
 ### **3. Get Students' cGPA for a Specific Timeframe**
 
