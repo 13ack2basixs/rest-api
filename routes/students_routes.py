@@ -9,7 +9,7 @@ def get_students():
     gpas = Grade.query.all()
 
     if not students:
-        return jsonify({"error": "No students found"}), 404
+        return jsonify({"Error": "No students found"}), 404
 
     # {student.id: gpa}
     cgpa_dict = {} 

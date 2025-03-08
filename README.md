@@ -16,7 +16,7 @@ This API is built using **Flask**. The database is managed using **PostgreSQL** 
 
 The database consists of four main tables:
 
-### ** Student Table (`student`)**
+### Student Table (`student`)
 
 | Column       | Type     | Description                 |
 | ------------ | -------- | --------------------------- |
@@ -24,14 +24,14 @@ The database consists of four main tables:
 | `name`       | STRING   | Name of the student         |
 | `teacher_id` | INT (FK) | Foreign key to `teacher.id` |
 
-### ** Teacher Table (`teacher`)**
+### Teacher Table (`teacher`)
 
 | Column | Type     | Description         |
 | ------ | -------- | ------------------- |
 | `id`   | INT (PK) | Unique teacher ID   |
 | `name` | STRING   | Name of the teacher |
 
-### ** Grade Table (`grade`)**
+### Grade Table (`grade`)
 
 | Column        | Type     | Description                  |
 | ------------- | -------- | ---------------------------- |
@@ -40,7 +40,7 @@ The database consists of four main tables:
 | `semester_id` | INT (FK) | Foreign key to `semester.id` |
 | `gpa`         | FLOAT    | GPA for the semester         |
 
-### ** Semester Table (`semester`)**
+### Semester Table (`semester`)
 
 | Column          | Type     | Description                                 |
 | --------------- | -------- | ------------------------------------------- |
@@ -72,6 +72,12 @@ The database consists of four main tables:
   ]
   ```
 
+- **Error Responses:**
+
+> | Status Code | Message               | Reason                           |
+> | ----------- | --------------------- | -------------------------------- |
+> | `404`       | `"No students found"` | If no students exist in database |
+
 ### **2. Reassign a Student's Teacher**
 
 - **Endpoint:** `PUT /api/students/<int:student_id>/reassign`
@@ -85,6 +91,12 @@ The database consists of four main tables:
     "updated_teacher": "Prof. Sanka"
   }
   ```
+
+- **Error Responses:**
+
+> | Status Code | Message                | Reason                                  |
+> | ----------- | ---------------------- | --------------------------------------- |
+> | `400`       | `"Invalid Student ID"` | If student ID doesn't exist in database |
 
 ### **3. Get Students' cGPA for a Specific Timeframe**
 
@@ -106,3 +118,11 @@ The database consists of four main tables:
     }
   ]
   ```
+
+- **Error Responses:**
+
+> | Status Code | Message                             | Reason                                              |
+> | ----------- | ----------------------------------- | --------------------------------------------------- |
+> | 400         | `"Invalid semester names provided"` | If the semester name is incorrect or does not exist |
+> | 400         | `"Invalid timeframe selected."`     | If no grades exist for the selected timeframe       |
+> | 404         | `"No students found"`               | If no students are found in the database            |
