@@ -82,6 +82,12 @@ The database consists of four main tables:
 
 - **Endpoint:** `PUT /api/students/<int:student_id>/reassign`
 - **Description:** Reassigns a student to a different teacher.
+- **Path Parameters:**
+
+| Parameter    | Type | Description       | Example |
+| ------------ | ---- | ----------------- | ------- |
+| `student_id` | INT  | Unique student ID | `1`     |
+
 - **Response Example:**
 
   ```json
@@ -102,6 +108,13 @@ The database consists of four main tables:
 
 - **Endpoint:** `GET /api/students/cgpa-timeframe/<string:start_sem>/<string:end_sem>`
 - **Description:** Retrieves the cumulative GPA of all students for a specific semester range.
+- **Path Parameters:**
+
+| Parameter   | Type   | Description    | Example        |
+| ----------- | ------ | -------------- | -------------- |
+| `start_sem` | STRING | Start semester | `2024-2025_S1` |
+| `end_sem`   | STRING | End semester   | `2024-2025_S2` |
+
 - **Response Example:**
 
   ```json
