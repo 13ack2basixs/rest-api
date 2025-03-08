@@ -48,7 +48,8 @@ The database consists of four main tables:
 | `semester_name` | STRING   | Name of the semester (e.g., `2023-2024_S1`) |
 
 The ER diagram is shown below:
-<img src="er_diagram.png" alt="ER Diagram" width="500">
+
+<img src="./er_diagram.png" alt="ER Diagram" width="500">
 
 ---
 
